@@ -1,0 +1,26 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161b22;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #58a6ff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #58a6ff;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
