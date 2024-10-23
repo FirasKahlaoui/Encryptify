@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import Navbar from "../components/Navbar";
 import "./Home.css";
 import github from "../assets/images/github-icon.svg";
 
 const Home = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   return (
     <div className="home">
-      <Navbar isLoggedIn={isLoggedIn} />
       <main>
         <h2>Secure Encryption & Decryption</h2>
         <p>Protect your data with advanced encryption algorithms.</p>
