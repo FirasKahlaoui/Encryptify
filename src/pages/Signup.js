@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
+import { auth, firestore } from "../firebase"; // Import Firestore
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { collection, addDoc } from "firebase/firestore"; // Firestore functions
 import "./Signup.css";
 
 const Signup = () => {
@@ -17,18 +18,39 @@ const Signup = () => {
 
   const handleSignup = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
+
     if (!agreeTerms) {
       setError("You must agree to the terms and conditions");
       return;
     }
+
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to Home after successful signup
+      // Firebase Authentication
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      // Firestore: Store additional user info
+      await addDoc(collection(firestore, "users"), {
+        uid: user.uid, // User ID from Firebase Authentication
+        fullName,
+        username,
+        email,
+        createdAt: new Date().toISOString(), // Timestamp for when the account was created
+      });
+
+      // Navigate to home after signup
+      navigate("/");
     } catch (err) {
+      console.error("Signup failed", err);
       setError("Failed to sign up");
     }
   };
