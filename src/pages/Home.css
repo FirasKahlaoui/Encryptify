@@ -1,0 +1,42 @@
+/* src/pages/Home.css */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+main {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a img {
+  width: 30px;
+  height: 30px;
+}
