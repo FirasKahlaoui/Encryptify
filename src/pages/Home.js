@@ -1,19 +1,14 @@
-// src/pages/Home.js
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Navbar from "../components/Navbar";
 import "./Home.css";
 import github from "../assets/images/github-icon.svg";
 
 const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className="home">
-      <nav className="navbar">
-        <h1 className="logo">Encryptify</h1>
-        <div className="nav-links">
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
-      </nav>
+      <Navbar isLoggedIn={isLoggedIn} />
       <main>
         <h2>Secure Encryption & Decryption</h2>
         <p>Protect your data with advanced encryption algorithms.</p>
@@ -26,7 +21,7 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={github} alt="GitHub Profile" />
+          <img src={github} alt="GitHub Profile" className="github-logo" />
         </a>
       </footer>
     </div>
