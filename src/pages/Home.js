@@ -8,15 +8,16 @@ const Home = () => {
   return (
     <div className="home">
       <nav className="navbar">
-        <h1>Encryptify</h1>
+        <h1 className="logo">Encryptify</h1>
         <div className="nav-links">
           <Link to="/login">Login</Link>
           <Link to="/signup">Sign Up</Link>
         </div>
       </nav>
       <main>
-        <h2>Welcome to Encryptify</h2>
-        <p>Your one-stop solution for secure encryption and decryption.</p>
+        <h2>Secure Encryption & Decryption</h2>
+        <p>Protect your data with advanced encryption algorithms.</p>
+        <p>Fast, secure, and reliable.</p>
       </main>
       <footer>
         <p>Developed with love by Firas Kahlaoui</p>

@@ -1,20 +1,44 @@
 /* src/pages/Home.css */
-body {
-  font-family: Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 1rem;
-  color: white;
+  background-color: #161b22;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #58a6ff;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .nav-links a {
-  color: white;
-  margin-left: 1rem;
+  color: #58a6ff;
+  margin-left: 1.5rem;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 
@@ -23,20 +47,47 @@ body {
 }
 
 main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin: 2rem 0;
+  padding: 2rem;
+}
+
+main h2 {
+  font-size: 2.5rem;
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+main p {
+  font-size: 1.2rem;
+  color: #8b949e;
+  margin-bottom: 1.5rem;
 }
 
 footer {
   text-align: center;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
+  background-color: #161b22;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
-  margin: 0;
+  color: #8b949e;
 }
 
 footer a img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
+  margin-top: 0.5rem;
+  filter: invert(88%) sepia(6%) saturate(23%) hue-rotate(174deg) brightness(96%)
+    contrast(86%);
+}
+
+footer a:hover img {
+  filter: invert(66%) sepia(67%) saturate(536%) hue-rotate(179deg)
+    brightness(95%) contrast(88%);
 }
