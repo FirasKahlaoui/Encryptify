@@ -1,7 +1,8 @@
 // src/pages/Home.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Home.css";
+import github from "../assets/images/github-icon.svg";
 
 const Home = () => {
   return (
@@ -19,8 +20,12 @@ const Home = () => {
       </main>
       <footer>
         <p>Developed with love by Firas Kahlaoui</p>
-        <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer">
-          <img src="/path-to-github-logo.png" alt="GitHub Profile" />
+        <a
+          href="https://github.com/FirasKahlaoui"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={github} alt="GitHub Profile" />
         </a>
       </footer>
     </div>
