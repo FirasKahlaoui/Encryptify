@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <div className="home">
       <main>
-        <h2>Secure Encryption & Decryption</h2>
-        <p>Protect your data with advanced encryption algorithms.</p>
-        <p>Fast, secure, and reliable.</p>
+        <h2>Secure Encryption & Decryption Dashboard</h2>
+        <p>Safeguard your data with cutting-edge algorithms.</p>
+        <p>Fast. Reliable. Transparent.</p>
       </main>
       <footer>
-        <p>Developed with love by Firas Kahlaoui</p>
+        <p>Developed with ♥ by Firas Kahlaoui</p>
         <a
           href="https://github.com/FirasKahlaoui"
           target="_blank"

@@ -1,37 +1,81 @@
+:root {
+  --primary-color: #004643; /* Secure & reliable green tone */
+  --secondary-color: #faf4d3;
+  --error-color: #d90429;
+  --text-color: #0c1618;
+  --button-hover: #d1ac00;
+  --light-bg: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+}
+
 .signup-container {
-  max-width: 400px;
-  margin: 50px auto;
+  max-width: 450px;
+  margin: 3rem auto;
   padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border-radius: 8px;
+  background-color: var(--light-bg);
+  box-shadow: 0px 4px 20px var(--shadow-color);
+  border: 1px solid var(--shadow-color);
 }
 
 .signup-container h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .signup-container input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.signup-container input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0px 0px 5px var(--primary-color);
 }
 
 .signup-container button {
   width: 100%;
-  padding: 10px;
-  background-color: #333;
+  padding: 12px;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .signup-container button:hover {
-  background-color: #444;
+  background-color: var(--button-hover);
+  transform: scale(1.03);
+}
+
+.signup-container button:active {
+  transform: scale(0.98);
+}
+
+.error {
+  color: var(--error-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .terms {
@@ -44,32 +88,70 @@
   margin-right: 10px;
 }
 
+.terms label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
 .rules-icon {
   margin-left: 10px;
-  color: #ff0000;
-  cursor: pointer;
-  font-weight: bold;
   font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--error-color);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.rules-icon:hover {
+  color: var(--primary-color);
+  transform: rotate(20deg);
 }
 
 .rules-popup {
-  background-color: #f9f9f9;
+  background-color: var(--light-bg);
   padding: 1rem;
   margin-top: 1rem;
   border: 1px solid #ddd;
   border-radius: 5px;
+  box-shadow: 0px 4px 10px var(--shadow-color);
 }
 
 .rules-popup h3 {
   margin-bottom: 10px;
+  color: var(--primary-color);
 }
 
 .rules-popup ul {
   list-style-type: disc;
   margin-left: 20px;
+  font-size: 0.9rem;
+  color: var(--text-color);
 }
 
-.error {
-  color: red;
-  text-align: center;
+.rules-popup ul li {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .signup-container {
+    padding: 1.5rem;
+  }
+
+  .signup-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .signup-container input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .signup-container button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .rules-popup ul {
+    font-size: 0.85rem;
+  }
 }
