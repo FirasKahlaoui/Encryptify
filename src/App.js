@@ -4,9 +4,11 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar/Navbar";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState({ role: "user" }); // Example user role
 
   return (
     <Router>
@@ -15,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard user={user} />} />
       </Routes>
     </Router>
   );
