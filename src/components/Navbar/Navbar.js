@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
-const Navbar = ({ isLoggedIn }) => {
+const Navbar = ({ isLoggedIn, handleLogout }) => {
   const location = useLocation();
 
   return (
@@ -15,14 +15,15 @@ const Navbar = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <>
             <Link
-              to="/profile"
-              className={location.pathname === "/profile" ? "active" : ""}
+              to="/dashboard"
+              className={location.pathname === "/dashboard" ? "active" : ""}
             >
-              Profile
+              Dashboard
             </Link>
             <Link
               to="/logout"
               className={location.pathname === "/logout" ? "active" : ""}
+              onClick={handleLogout}
             >
               Logout
             </Link>

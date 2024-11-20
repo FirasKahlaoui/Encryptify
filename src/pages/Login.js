@@ -4,7 +4,7 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Login.css";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -14,7 +14,8 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Redirect to Home after successful login
+      onLogin();
+      navigate("/dashboard"); // Redirect to Dashboard after successful login
     } catch (err) {
       setError("Failed to log in");
     }
