@@ -1,40 +1,93 @@
+:root {
+  --primary-color: #004643; /* Aligns with your project colors */
+  --secondary-color: #faf4d3;
+  --error-color: #d32f2f;
+  --button-hover: #005a50;
+  --font-color: #0c1618;
+  --border-color: #ccc;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .login-container {
   max-width: 400px;
-  margin: 50px auto;
+  margin: auto;
   padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, var(--secondary-color), #ffffff);
 }
 
 .login-container h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .login-container input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--font-color);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0px 0px 5px rgba(0, 70, 67, 0.3);
 }
 
 .login-container button {
   width: 100%;
-  padding: 10px;
-  background-color: #333;
-  color: white;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .login-container button:hover {
-  background-color: #444;
+  background-color: var(--button-hover);
 }
 
 .error {
-  color: red;
+  color: var(--error-color);
   text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 1.5rem;
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-container input {
+    font-size: 0.9rem;
+  }
+
+  .login-container button {
+    font-size: 0.9rem;
+  }
 }

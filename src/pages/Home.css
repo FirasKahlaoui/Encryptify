@@ -1,6 +1,17 @@
-/* src/pages/Home.css */
+:root {
+  --primary-color: #004643; /* Matches your project's palette */
+  --secondary-color: #faf4d3;
+  --accent-color: #d1ac00;
+  --text-color: #0c1618;
+  --light-gray: #f4f4f4;
+  --github-icon-size: 40px;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .home {
@@ -8,51 +19,97 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 1rem;
-  color: white;
-}
-
-.nav-links a {
-  color: white;
-  margin-left: 1rem;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
 }
 
 main {
-  text-align: center;
-  margin: 2rem 0;
   flex-grow: 1;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+main h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+main p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+main p:nth-child(2) {
+  font-weight: bold;
 }
 
 footer {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #f1f1f1;
+  width: 100%;
+  border-top: 2px solid var(--accent-color);
 }
 
 footer p {
   margin: 0;
-  color: #333;
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 footer a {
+  margin-top: 1rem;
   display: inline-block;
-  margin-top: 0.5rem;
+  text-decoration: none;
 }
 
-footer a img.github-logo {
-  width: 30px;
-  height: 30px;
+footer a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+footer img.github-logo {
+  width: var(--github-icon-size);
+  height: var(--github-icon-size);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+footer img.github-logo:hover {
+  filter: none;
+}
+
+/* Add subtle animations for interactivity */
+.home main h2 {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main h2 {
+    font-size: 1.8rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  footer img.github-logo {
+    width: 30px;
+    height: 30px;
+  }
 }
